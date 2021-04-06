@@ -56,7 +56,7 @@ class Objeto(Cuarto):
 from abc import ABC, abstractclassmethod
 
 class Juego(ABC):
-    def __init__(self, cuarto_name, name_obj, posicion, requirement, name, award, rules):
+    def __init__(self, requirement, name, award, rules):
         self.requirement = requirement
         self.name = name
         self.award = award

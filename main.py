@@ -77,7 +77,22 @@ Cuarto mas visitado: {cuarto_f}
 Dificultad: {dificultad}
     ''')
 
-
+def mostrar_partidas_jugadas(records):
+    for n in records:
+        result = n.result
+        dificultad = n.dificulty
+        username = n.get_username()
+        cuarto_f = n.cuarto_f
+        partidas_jugadas = n.partidas_jugadas
+    for i,j in enumerate(records):
+        print(f'Partida numero {i+1}')
+        print(f'''
+Username: {username}
+Partidas jugadas: {partidas_jugadas}
+Dificultad: {dificultad}
+Cuarto mas visitado: {cuarto_f}
+Resultado de la partida: {result}
+''')
 
 
 users = []
@@ -165,7 +180,9 @@ def main():
                 result = 'Ganaste'
                 t_final = tiempo_final[0]
                 partidas = chequear_partidas(records)
-                # partidas += 1
+                if partidas == None:
+                    partidas = 0
+                partidas += 1
                 mas_visitas = 0
                 for i in cuartos_visitados:
                     visitas = cuartos_visitados[i]
@@ -191,9 +208,10 @@ def main():
             elif perdiste == False:
                 salir = input('PERDISTE. Deseas volver al menu principal\n1.Si\n\nIngrese el numero de la opcion que desea\n> ')
                 partidas = chequear_partidas(records)
+                if partidas == None:
+                    partidas = 0
                 result = 'Perdiste'
-                # partidas = int(partidas)
-                # partidas += 1
+                partidas += 1
                 t_final = 0
                 mas_visitas = 0
                 for i in cuartos_visitados:
@@ -241,8 +259,8 @@ Ingrese el nimero correspondinte a la opcion que desea
                     salir = input('Por favor ingrese 1\n> ')
                 if salir == '1':
                     break
-            while seleccion == '1':
-                print('No me dio tiempo de hacer esto :(')
+            while seleccion == '2':
+                mostrar_partidas_jugadas(records)
                 break
             if seleccion == '3':
                 break

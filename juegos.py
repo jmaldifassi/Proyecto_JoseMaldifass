@@ -2415,7 +2415,7 @@ Ingrese la letra correspondiente a la respuesta que desea
 > ''')
                                 while respuesta != 'a' and respuesta != 'b' and respuesta != 'c' and respuesta != 'd':
                                     respuesta = input('Por favor ingrese una respuesta valida\n> ')
-                                if respuesta == 'a':
+                                if respuesta == 'd':
                                     print('\n')
                                     print('Malo: NOOOOO, ME LOGRASTE VENCE')
                                     print('\n')
